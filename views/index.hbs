@@ -1,0 +1,61 @@
+{{# if success }}
+
+{{ else }}
+    {{# if errors }}
+        <section class="errors">
+            <ul>
+                {{# each errors }}
+                    <li>{{ this.msg }}</li>
+                {{/each}}
+            </ul>
+        </section>
+    {{/if}}
+    <form action="/submit" method="post">
+        <div class="container">
+            <div class="jumbotron">
+                <div class= "d-flex flex-column  justify-content-center">
+                    <h3 class = "display-3 text-center">Bé tập tính</h3>
+                    <h4 class = "text-center">Đây là bài tính đơn giản</h4>
+                </div>
+            </div>
+
+            <form name = "form" method="post" >
+                <br />
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <h6>Số thứ nhất	</h6>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <input class = "form-control" name="expr" id="expr01"  type="text"   onchange ="kiemTraSoNguyen(id)"/>
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <h6>Số thứ hai	</h6>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <input class = "form-control" name="expr1" id="expr02" type="text"   onchange ="kiemTraSoNguyen(id)"/>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <label>
+                            <input type="radio" value="cong" name="phepCong"  /> Cộng
+                            <input type="radio" value="tru" name="phepTru"/> Trừ
+                        </label>
+                    </div>
+
+                    <input type="submit" value ="Tính" >
+                </div>
+            </form>
+            <footer class="pt-4 my-md-5 pt-md-5 border-top d-flex justify-content-center">
+                <div id="author">
+                    <p>© Design and implement by&nbsp;
+                        <a href="https://www.facebook.com/quangtuansieungo">Quang Tuấn</a>
+                    </p>
+                </div>
+            </footer>
+        </div>
+
+    </form>
+{{/if}}

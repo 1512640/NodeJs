@@ -1,0 +1,144 @@
+{{# if success }}
+    <div class="container">
+        <div class="jumbotron">
+            <div class= "d-flex flex-column  justify-content-center">
+                <h3 class = "display-3 text-center">Bé tập tính</h3>
+                <h4 class = "text-center">Đây là bài tính đơn giản</h4>
+            </div>
+        </div>
+
+        <form action="/" method="post">
+            <br />
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <h6>Số thứ nhất	</h6>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <input class = "form-control" name="expr"  type="text" value={{s1}}>
+
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <label>
+                        <input type="radio" value="cong" name="phepToan"  > Cộng
+                        <input type="radio" value="tru" name="phepToan"> Trừ
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <h6>Số thứ hai	</h6>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <input class = "form-control" name="expr1" type="text" value={{s2}}  >
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <label>
+                        <input type="radio" value="nhan" name="phepToan"/> Nhân
+                        <input type="radio" value="chia" name="phepToan"/> Chia
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <h6 class="canhhang">Kết quả</h6>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <input type="text" class = "form-control" id="ketqua" value={{kq}} >
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <input type="submit" value ="Tính" >
+                    <input type="reset"  value="Reset" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <h6>Thông báo </h6>
+                </div>
+                <div class="col-md-8 col-sm-6">
+                    <span id="thongbao" style="color: red"></span>
+                </div>
+            </div>
+        </form>
+        <footer class="pt-4 my-md-5 pt-md-5 border-top d-flex justify-content-center">
+            <div id="author">
+                <p>© Design and implement by&nbsp;
+                    <a href="https://www.facebook.com/quantuan997">Quang Tuấn</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+{{ else }}
+
+    {{# if errors }}
+        {{# each errors }}
+            <div class="alert alert-danger" role="alert">
+                    <li>Lỗi {{ this.msg }}</li>
+            </div>
+        {{/each}}
+    {{/if}}
+    <div class="container">
+    <div class="jumbotron">
+        <div class= "d-flex flex-column  justify-content-center">
+            <h3 class = "display-3 text-center">Bé tập tính</h3>
+            <h4 class = "text-center">Đây là bài tính đơn giản</h4>
+        </div>
+    </div>
+
+    <form action="/" method="post">
+        <br />
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <h6>Số thứ nhất	</h6>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <input class = "form-control" name="expr"  type="text" value={{s1}}>
+
+            </div>
+            <div class="col-md-4 col-sm-6" name="congTru">
+                <label>
+                    <input type="radio"  value="cong" name="phepToan"  checked={{ischecked}}> Cộng
+                    <input type="radio"  value="tru" name="phepToan"> Trừ
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <h6>Số thứ hai	</h6>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <input class = "form-control" name="expr1" type="text" value={{s2}}  >
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <label>
+                    <input type="radio"  value="nhan" name="phepToan"/> Nhân
+                    <input type="radio"  value="chia" name="phepToan"/> Chia
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <h6 class="canhhang">Kết quả</h6>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <input type="text" class = "form-control" id="ketqua" value={{kq}} >
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <input type="submit" value ="Tính"  class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" >
+                <input type="reset"  value="Reset" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <h6>Thông báo </h6>
+            </div>
+        </div>
+    </form>
+    <footer class="pt-4 my-md-5 pt-md-5 border-top d-flex justify-content-center">
+        <div id="author">
+            <p>© Design and implement by&nbsp;
+                <a href="https://www.facebook.com/quangtuansieungo">Quang Tuấn</a>
+            </p>
+        </div>
+    </footer>
+</div>
+{{/if}}
